@@ -1,27 +1,26 @@
-import React, {Component} from 'react';
-import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
+import React from 'react';
+import {Card} from 'react-bootstrap';
 import StarRatingComponent from 'react-star-rating-component';
 
-class MovieCard extends Component {
-  render () {
+const MovieCard = ({movie}) => {
     return (
-      <>
-        <Card style={{ width: '18rem' }} className="mov_card ">
-            <Card.Img variant="top" src="https://fr.web.img6.acsta.net/pictures/19/03/21/17/05/1927893.jpg" style={{width:"100%"}} />
+        <div className="movie-card">
+             <Card style={{ width: '14rem' }} className="mov_card ">
+            <Card.Img variant="top" src={movie.posteUrl} style={{width:"100%"}}/>
             <Card.Body>
-                <Card.Title>GOT</Card.Title>
-                <Card.Text>2010</Card.Text>
+                <Card.Title>{movie.title}</Card.Title>
+                <Card.Text>{movie.description}</Card.Text>
+                <Card.Text>
+                <StarRatingComponent 
+                    name="rate1" 
+                    starCount={5}
+                    value={movie.rate}
+               />
+                </Card.Text>
             </Card.Body>
-            <ListGroup className="list-group-flush">
-                <ListGroupItem>posterUrl</ListGroupItem>
-            </ListGroup>
-            <Card.Body>
-            <StarRatingComponent/>
-            </Card.Body>
-        </Card>
-      </>
+            </Card>
+        </div>
     )
-  }
 }
-  
-  export default MovieCard;
+
+export default MovieCard
