@@ -14,8 +14,7 @@ const MovieList = ({movies ,addNewMovie}) => {
             <AddModal handleClose={handleClose} show={show} addNewMovie ={addNewMovie}/>
             <div className="movies_list" >
                 {movies.map((el , index) =>
-                    <MovieCard  movie ={el} key ={index}>
-                    </MovieCard>
+                    <MovieCard  movie ={el} key ={index}></MovieCard>
                 )} 
             </div>
         </div>

@@ -9,8 +9,9 @@ const AddModal = ({handleClose, show,addNewMovie}) => {
         title:"",
         description:"",
         posteUrl:"",
-        rate:""
-      })
+        rate:"",
+        trailerURL : ""
+    })
 
       const handleChange = (e) =>{
           setNewMovie({...newMovie,[e.target.name]:e.target.value});
@@ -31,7 +32,9 @@ const AddModal = ({handleClose, show,addNewMovie}) => {
                          <label className="lab">PosteUrl:</label>
                          <input type="text" size="20" name="posteUrl" className="inp-text" onChange={handleChange} ></input><br/>
                          <label className="lab">Rate</label>
-                         <input type="text" size="20"  name="rate" className="inp-text" onChange={handleChange} ></input>
+                        <input type="number" size="20"  name="rate" className="inp-text" onChange={handleChange} ></input><br/>
+                         <label className="lab">trailerURL</label>
+                        <input type="text" size="60"  name="trailerURL" className="inp-text" onChange={handleChange} ></input>
                      </div>
                  </Modal.Body>
                  <Modal.Footer>

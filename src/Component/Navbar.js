@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Navbar, Nav, Button, FormControl, Form} from 'react-bootstrap';
+import MovieDescription from "./MovieDescription";
+import { Link, Route } from 'react-router-dom';
 
 export class navbar extends Component {
     render() {
@@ -17,16 +19,15 @@ export class navbar extends Component {
                     </Navbar.Brand>
                     
                     <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#tv_show">TV Show</Nav.Link>
-                    <Nav.Link href="#movies">Movies</Nav.Link>
-                    <Nav.Link href="#my_list">My List</Nav.Link>
+                    <Nav.Link to="/" >Home</Nav.Link>
+                    <Nav.Link to="/tv_show">TV Show</Nav.Link>
+                    <Nav.Link to="/movies">Movies</Nav.Link>
+                    <Nav.Link to="/my_list">My List</Nav.Link>
                     </Nav>
                     {/* <Form inline>
                     <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
                     </Form> */}
                 </Navbar>
-
             </div>
         )
     }

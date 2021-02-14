@@ -11,7 +11,7 @@ const Filter = ({filterRate,setFilterRate ,search}) => {
     return (
         <div className="active-pink-3 active-pink-4 mb-4 ">
           <div className ="searchbox "> 
-             <input type="text" className="form-control rounded "
+             <input type="text" className="form-control rounded"
               placeholder ="search for a movie..."
                onChange={(e) =>search(e.target.value)}
              />
