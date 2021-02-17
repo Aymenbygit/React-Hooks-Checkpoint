@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
-import {Navbar, Nav, Button, FormControl, Form} from 'react-bootstrap';
-import MovieDescription from "./MovieDescription";
-import { Link, Route } from 'react-router-dom';
+import React from 'react';
+import {Navbar, Nav, Button, FormControl, Form,} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import StarRatingComponent from 'react-star-rating-component';
 
-export class navbar extends Component {
-    render() {
+const Filter = ({filterRate,setFilterRate ,search}) => {
+    const onStarClick = (nextValue) => {
+        setFilterRate(nextValue);
+      }
         return (
             <div>
                 <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/">
                     <img
                         src="https://1.bp.blogspot.com/-4s8t0OXkc80/W6uqTV0uR1I/AAAAAAAABpE/rQQcwTTMG9UmAPHFRxorztte0f8bg70JACK4BGAYYCw/s1600/e82b2e42-6761-4d4b-bcc0-29b23b11ccbf.png"
                         width="50"
@@ -18,19 +20,27 @@ export class navbar extends Component {
                     />
                     </Navbar.Brand>
                     
-                    <Nav className="mr-auto">
-                    <Nav.Link to="/" >Home</Nav.Link>
-                    <Nav.Link to="/tv_show">TV Show</Nav.Link>
-                    <Nav.Link to="/movies">Movies</Nav.Link>
-                    <Nav.Link to="/my_list">My List</Nav.Link>
+                    <Nav className="mr-auto" >
+                    <Link style={{color:'#FFB400'}} to="/" >Home&nbsp;|</Link>
+                    <Link style={{color:'#FFB400'}} to="/"> &nbsp;TV Show</Link>
                     </Nav>
-                    {/* <Form inline>
-                    <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
-                    </Form> */}
+                    <Form inline>
+                    <FormControl type="text" className="form-control rounded"
+                    placeholder ="search for a movie..."
+                    onChange={(e) =>search(e.target.value)}
+                     />
+                     <div className ="stars">
+                    <StarRatingComponent 
+                    name="rate1" 
+                    starCount={5}
+                    value={filterRate}
+                    onStarClick={onStarClick}
+                    emptyStarColor={"white"}
+                    />
+                </div>
+                    </Form>
                 </Navbar>
+                
             </div>
-        )
-    }
-}
-
-export default navbar
+        )}
+export default Filter;

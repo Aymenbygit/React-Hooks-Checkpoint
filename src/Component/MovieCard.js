@@ -19,7 +19,7 @@ const MovieCard = ({movie}) => {
                     value={movie.rate}
                />
                 </Card.Text>
-                    <Link to={`/moviedescription/${movie.id}`} >Click me</Link>
+                    <Link to={`/moviedescription/${movie.id}`} >Click to show more details</Link>
             </Card.Body>
             </Card>
         </div>

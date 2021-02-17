@@ -69,3 +69,27 @@ img {
   background-color: #E0A800;
   color: white;
 }
+.new_mov_card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 540px;
+  border-radius: 5px;
+  margin: 15px;
+}
+.titleMovieList {
+  font-family: 'Lato', sans-serif;
+  margin:1em 0 0 0;
+  text-align: center;
+  top: 0;
+}
+.DescriptionDiv {
+  min-height: 530px;
+}
+.my_iframe{
+  text-align: center;
+  border-radius: 2%;
+  border: #E0A800 1px solid;
+}
+Link{
+  text-decoration: none;
+}

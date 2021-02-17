@@ -1,6 +1,7 @@
 import React ,{useState} from 'react'
 import MovieCard from './MovieCard';
 import AddModal from './AddMovie';
+import {Card} from 'react-bootstrap';
 
 const MovieList = ({movies ,addNewMovie}) => {
     
@@ -10,12 +11,35 @@ const MovieList = ({movies ,addNewMovie}) => {
 
     return (
         <div>
-            <button onClick={handleShow} className="btn btn-warning btn-search">Add a new movie</button>
+
+            {/* <Card style={{ width: '14rem' }} className="new_mov_card">
+            <Card.Img />
+            <Card.Body>
+                <Card.Title></Card.Title>
+                <Card.Text></Card.Text>
+                <Card.Text>
+                <button onClick={handleShow} className="btn btn-warning btn-search">Add a new movie</button>
+                </Card.Text>
+            </Card.Body>
+            </Card> */}
+
+
+{/* <button onClick={handleShow} className="btn btn-warning btn-search">Add a new movie</button> */}
             <AddModal handleClose={handleClose} show={show} addNewMovie ={addNewMovie}/>
             <div className="movies_list" >
                 {movies.map((el , index) =>
                     <MovieCard  movie ={el} key ={index}></MovieCard>
                 )} 
+                <Card style={{ width: '14rem' }} className="new_mov_card">
+            <Card.Img />
+            <Card.Body>
+                <Card.Title></Card.Title>
+                <Card.Text></Card.Text>
+                <Card.Text style={{textAlign:'center',marginTop:'230px'}} >
+                <button onClick={handleShow} className="btn btn-warning btn-search">Add a new movie</button>
+                </Card.Text>
+            </Card.Body>
+            </Card>
             </div>
         </div>
     )
