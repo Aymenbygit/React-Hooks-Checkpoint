@@ -1,5 +1,4 @@
 import React from 'react';
-import {  } from "module";
 import Iframe from 'react-iframe'
 import {Card} from 'react-bootstrap';
 

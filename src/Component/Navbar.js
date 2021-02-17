@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, Nav, Button, FormControl, Form,} from 'react-bootstrap';
+import {Navbar, Nav, FormControl, Form,} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
@@ -18,8 +18,7 @@ const Filter = ({filterRate,setFilterRate ,search}) => {
                         className="d-inline-block align-top"
                         alt="logo"
                     />
-                    </Navbar.Brand>
-                    
+                    </Navbar.Brand> 
                     <Nav className="mr-auto" >
                     <Link style={{color:'#FFB400'}} to="/" >Home&nbsp;|</Link>
                     <Link style={{color:'#FFB400'}} to="/"> &nbsp;TV Show</Link>
@@ -27,9 +26,9 @@ const Filter = ({filterRate,setFilterRate ,search}) => {
                     <Form inline>
                     <FormControl type="text" className="form-control rounded"
                     placeholder ="search for a movie..."
-                    onChange={(e) =>search(e.target.value)}
-                     />
-                     <div className ="stars">
+                    onChange={(e) =>search(e.target.value)} 
+                    />
+                    <div className ="stars">
                     <StarRatingComponent 
                     name="rate1" 
                     starCount={5}
