@@ -67,9 +67,9 @@ const App = () => {
     <div className="App">
     <BrowserRouter>
       <Route path="/" render={() => <Navbar filterRate ={filterRate} setFilterRate={setFilterRate} search={search}/>} />
-      <Route  path="/" exact component={() => <MovieList movies ={movies.filter((movie)=>movie.rate >=filterRate && movie.title.toLowerCase().includes(searchValue.toLowerCase().trim()))}
+      <Route  path="/" exact render={() => <MovieList movies ={movies.filter((movie)=>movie.rate >=filterRate && movie.title.toLowerCase().includes(searchValue.toLowerCase().trim()))}
       addNewMovie={addNewMovie} />} />
-      <Route exact path="/moviedescription/:id" component= {(props)=> <MovieDescription movies={movies} {...props}/>}   />
+      <Route exact path="/moviedescription/:id" render= {(props)=> <MovieDescription movies={movies} {...props}/>}   />
       <Route  path="/" component={Footer} />
       {/* <Route restricted={false} component={Notfound}/> */}
       </BrowserRouter>  
